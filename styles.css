@@ -1,0 +1,24 @@
+.fondo1{
+    background-image: black;
+}
+
+img.carritoImg{
+    display: flex;
+    background-position: center;
+    width: 30px;
+    padding: 10px;
+    margin-left: auto;
+    border-radius: 50%;
+
+
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    font-family:Georgia, 'Times New Roman', Times, serif ;
+    background: linear-gradient(to left, );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+}

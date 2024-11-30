@@ -1,50 +1,38 @@
-alert("Bienvenido al Home Sharing app by José Maldonado");
-alert("Ingrese el nombre y el valor de la cuenta a compartir, cuando termine envíe una cuenta sin nombre para ir al siguiente paso.")
+document.getElementById("carrito").addEventListener("click", ()=>{
+    document.getElementById("carritoDeCompra").classList.toggle("activar")
+})
 
-let cuentas = [];
+const pinturas = [
 
-let ingresar = true;
-
-while (ingresar) {
-  let nombreDeLaCuenta = prompt("Cual es el nombre de la cuenta?");
-
-  if (nombreDeLaCuenta !== "") {
-    let valorDeLaCuenta = Number(prompt("Cual es el valor de la cuenta?"));
-
-    cuentas.push({ nombreDeLaCuenta, valorDeLaCuenta });
-  }
-
-  if (nombreDeLaCuenta === "") {
-    ingresar = false;
-  }
-}
-
-let personasACompartir = Number(prompt("Cuantas personas van a compartir la cuenta?"));
-
-let message = `La cuenta compartida por ${personasACompartir}:\n`;
-let total = 0;
-
-for (let i = 0; i < cuentas.length; i++) {
-  message += `${cuentas[i].nombreDeLaCuenta}: $ ${cuentas[i].valorDeLaCuenta}\n`;
-  total += cuentas[i].valorDeLaCuenta;
-}
-
-let totalCompartido = total / personasACompartir;
-
-alert(`${message}\n\nValor por persona: $${totalCompartido.toFixed(2)}`);
-
-
-
-
-
-
-
-
-
-
-
-
-
+  {
+    id: 1,
+    nombre: "Poseidon"
+    elemento: "Pintura"
+    img:"Cuadro1"
+    precio: 25000
+  },
+  {
+    id: 2,
+    nombre: "Virgen del velo"
+    elemento: "Pintura"
+    img:"Cuadro2"
+    precio: 25000
+  },
+  {
+    id: 3,
+    nombre: "Geometric Queen"
+    elemento: "Pintura"
+    img:"Cuadro3"
+    precio: 35000
+  },
+  {
+    id: 4,
+    nombre: "Vilipendia"
+    elemento: "Pintura"
+    img:"Cuadro4"
+    precio: 20000
+  },
+]
 
 
 
@@ -132,5 +120,3 @@ alert(`${message}\n\nValor por persona: $${totalCompartido.toFixed(2)}`);
 //         }    
 //     }
 // }
-
-
