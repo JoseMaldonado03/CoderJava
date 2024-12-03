@@ -1,24 +1,48 @@
+
 .fondo1{
-    background-image: black;
+    background-color: rgb(99, 186, 208);
 }
 
-img.carritoImg{
-    display: flex;
-    background-position: center;
-    width: 30px;
+
+#carrito {
+    width: 50px;
+    height: 50px;
+    background: azure;
+    border-radius: 50px; 
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+  }
+  
+  #carritoDeCompra {
+    background: azure;
+    width: 300px;
+    height: 300px;
+    position: fixed;
+    top: 80px;
+    right: 10px;
+    border-radius: 10px;
     padding: 10px;
-    margin-left: auto;
-    border-radius: 50%;
-
-
-}
-
-.title{
-    display: flex;
-    justify-content: center;
-    font-family:Georgia, 'Times New Roman', Times, serif ;
-    background: linear-gradient(to left, );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     
-}
+    
+    display: none;
+  }
+  
+  #carritoDeCompra.activar {
+    
+    display: block;
+  }
+  
+  #productos{
+    background-color: azure;
+    width: 500px;
+    height: auto;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  .img img {
+    margin-left: 50px;
+    width:300px;
+    height:auto;
+ }

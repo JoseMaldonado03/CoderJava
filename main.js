@@ -1,38 +1,90 @@
-document.getElementById("carrito").addEventListener("click", ()=>{
-    document.getElementById("carritoDeCompra").classList.toggle("activar")
-})
-
-const pinturas = [
-
+let productos_disponibles = [
   {
     id: 1,
-    nombre: "Poseidon"
-    elemento: "Pintura"
-    img:"Cuadro1"
-    precio: 25000
+    name: "Poseidon",
+    img: "assets/Cuadro1.jpg",
+    elemento: "Pintura",
+    precio: 25000,
   },
   {
     id: 2,
-    nombre: "Virgen del velo"
-    elemento: "Pintura"
-    img:"Cuadro2"
-    precio: 25000
+    name: "Virgen del velo",
+    img: "assets/Cuadro2.jpg",
+    elemento: "Pintura",
+    precio: 25000,
   },
   {
     id: 3,
-    nombre: "Geometric Queen"
-    elemento: "Pintura"
-    img:"Cuadro3"
-    precio: 35000
+    name: "Geometric Queen",
+    img: "assets/Cuadro3.jpg",
+    elemento: "Pintura",
+    precio: 35000,
   },
   {
     id: 4,
-    nombre: "Vilipendia"
-    elemento: "Pintura"
-    img:"Cuadro4"
-    precio: 20000
+    name: "Vilipendia",
+    img: "assets/Cuadro4.jpg",
+    elemento: "Pintura",
+    precio: 20000,
   },
-]
+];
+
+
+productos_disponibles.forEach((p) => {
+  document.getElementById("productos").innerHTML += 
+  `<p id="${p.id}" class="produto-item">
+      ${p.name} 
+      <div class="img">
+        <img src="${p.img}" alt="${p.name}" />
+      </div> 
+      - ARS ${p.precio}
+    </p>
+    `
+    ;
+});
+  
+let produtos_seleccionados = [];
+
+document.getElementById("carrito").addEventListener("click", () => {
+  document.getElementById("carritoDeCompra").classList.toggle("activar");
+})
+
+let produtos = document.querySelectorAll(".productos li")
+
+document.body.addEventListener("click", (event) => {
+    if (event.target.className == "produto-item") {
+      let productoExists = produtos_seleccionados.findIndex((p) => p.id == event.target.id);
+      let productoSelecionado = productos_disponibles.filter((p) => p.id == event.target.id);
+  
+      if (productoExists < 0) {
+         produtos_seleccionados.push({ ...productoSelecionado[0], quantidade: 1 });
+        
+      
+      return showListSelecionadosProdutos(produtos_seleccionados);
+      }
+  
+      produtos_seleccionados[productoExists].quantidade += 1;
+      
+      showListSelecionadosProdutos(produtos_seleccionados);
+}
+  });
+
+function showListSelecionadosProdutos(produtos) {
+  document.getElementById("productos-selecionados").innerHTML = "";
+  
+  produtos.forEach((p) => {
+    document.getElementById("productos-selecionados").innerHTML += `
+      <li>
+        ${p.quantidade}x <strong>${p.name}</strong> - ARS ${p.precio} unit / Total: ARS ${p.quantidade * p.precio} 
+      </li>
+      
+    `;
+  });
+ 
+}
+
+
+
 
 
 
