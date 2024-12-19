@@ -1,0 +1,30 @@
+[
+    {
+      "id": 1,
+      "name": "Poseidon",
+      "img": "assets/Cuadro1.jpg",
+      "elemento": "Pintura",
+      "precio": 25000
+    },
+    {
+      "id": 2,
+      "name": "Virgen del velo",
+      "img": "assets/Cuadro2.jpg",
+      "elemento": "Pintura",
+      "precio": 25000
+    },
+    {
+      "id": 3,
+      "name": "Geometric Queen",
+      "img": "assets/Cuadro3.jpg",
+      "elemento": "Pintura",
+      "precio": 35000
+    },
+    {
+      "id": 4,
+      "name": "Vilipendia",
+      "img": "assets/Cuadro4.jpg",
+      "elemento": "Pintura",
+      "precio": 20000
+    }
+  ]

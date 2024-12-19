@@ -6,20 +6,28 @@
     <link rel="stylesheet" href="/styles.css">
     <title>JavaScript</title>
 </head>
-<body class="fondo1">
-    <div class="container">
-        <div id="carrito"><center>
-              carrito
-        </center>
+<body class="fondo">
+    <div id="logo">
+      <div id="linea">
+        <img id="logui" src="/assets/logo.png" alt="">
+      </div>
+    </div>
+  <div class="container">
+        <div id="carrito">
+              <img src="/assets/logo_carrito.png" alt="">
         </div>
-        
+      
         <div id="carritoDeCompra">
+          <button id="boton-cerrar">X</button>
           Carrito de Compras
           <ul id="productos-selecionados"></ul>
+          <div id="contieneBoton">
+            <button id="botonComprar">Comprar</button>
+          </div>
         </div>
-        
         <ul id="productos"></ul>
-      </div>   
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>   
     <script src="main.js"></script>
 </body>
 </html>

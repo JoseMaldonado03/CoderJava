@@ -1,48 +1,126 @@
-
-.fondo1{
-    background-color: rgb(99, 186, 208);
+.fondo{
+  background-color: #ab792f;
 }
-
+#logo{
+    background:#122A2C;
+    width: auto;
+    height: 120px;
+}
+#linea{
+  background:#122A2C;
+    width: 120px;
+    height: 98%; 
+    position: fixed;
+}
+#logui{
+  margin-top: 20px;
+  width: 120px;
+  height: 100px;
+  position: fixed;
+}
 
 #carrito {
     width: 50px;
     height: 50px;
-    background: azure;
     border-radius: 50px; 
     cursor: pointer;
     position: fixed;
-    top: 10px;
+    top: 30px;
     right: 10px;
   }
-  
-  #carritoDeCompra {
-    background: azure;
+
+#carrito img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+
+#carritoDeCompra {
+    text-align: center;
+    border: solid #000000;
+    background: #122A2C;
     width: 300px;
-    height: 300px;
+    height: 70%;
     position: fixed;
-    top: 80px;
+    top: 90px;
     right: 10px;
     border-radius: 10px;
     padding: 10px;
-    
-    
     display: none;
-  }
-  
-  #carritoDeCompra.activar {
-    
-    display: block;
-  }
-  
-  #productos{
-    background-color: azure;
-    width: 500px;
+    color: #ffffff; 
+}
+
+#carritoDeCompra img{
+    width: 50px;
     height: auto;
-    cursor: pointer;
-    border-radius: 10px;
-  }
-  .img img {
+}
+#carritoDeCompra.activar {
+    display: block;
+}
+#productos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0 auto;
+}
+
+.produto-item {
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f5f5f5; 
+  border: solid #122A2C 5px;
+  border-radius: 5px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.img img {
+  display: block;
+  border-radius: 5px;
+  border: solid #122A2C 5px;
+  margin: 10px auto;
+  max-width: 300px;
+  height: auto;
+}
+#contieneBoton {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#botonComprar {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+@media (max-width: 1200px) {
+  #productos {
     margin-left: 50px;
-    width:300px;
-    height:auto;
- }
+    width: 300px;
+  }
+  #logo {
+    height: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  #productos {
+    gap: 15px; 
+  }
+  .produto-item {
+    max-width: 250px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .produto-item {
+    max-width: 100%; 
+  }
+}
+
