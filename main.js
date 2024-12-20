@@ -1,10 +1,31 @@
+let produtos_seleccionados = JSON.parse(localStorage.getItem("produtos_seleccionados")) ||  [];
+
+function showListSelecionadosProdutos(productos) {
+    localStorage.setItem("produtos_seleccionados", JSON.stringify(productos))
+    document.getElementById("productos-selecionados")
+        .innerHTML = "";
+
+    productos.forEach((p) => {
+        document.getElementById("productos-selecionados")
+            .innerHTML += `
+    <li>
+      ${p.quantidade}x <strong>${p.name}</strong> <img src="${p.img}" alt="${p.name}" /> - ARS ${p.precio} unit / Total: ARS ${p.quantidade * p.precio} 
+   <button id = "${p.id}" class="producto_sumar">+</button> - <button id = "${p.id}" class="producto_borrar">-</button> </li> 
+    
+  `;
+    });
+
+}
+
 document.getElementById("carrito")
     .addEventListener("click", () => {
+        showListSelecionadosProdutos(produtos_seleccionados);
         document.getElementById("carritoDeCompra")
             .classList.toggle("activar");
     })
 document.getElementById("boton-cerrar")
     .addEventListener("click", () => {
+        showListSelecionadosProdutos(produtos_seleccionados);
         document.getElementById("carritoDeCompra")
             .classList.toggle("activar");
     })
@@ -30,9 +51,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       </p>
       `;
     });
-
-    let produtos_seleccionados = JSON.parse(localStorage.getItem("produtos_seleccionados")) || [];
-
 
     let produtos = document.querySelectorAll(".productos li")
 
@@ -153,19 +171,4 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     });
 
-    function showListSelecionadosProdutos(produtos) {
-        document.getElementById("productos-selecionados")
-            .innerHTML = "";
-
-        produtos.forEach((p) => {
-            document.getElementById("productos-selecionados")
-                .innerHTML += `
-        <li>
-          ${p.quantidade}x <strong>${p.name}</strong> <img src="${p.img}" alt="${p.name}" /> - ARS ${p.precio} unit / Total: ARS ${p.quantidade * p.precio} 
-       <button id = "${p.id}" class="producto_sumar">+</button> - <button id = "${p.id}" class="producto_borrar">-</button> </li> 
-        
-      `;
-        });
-
-    }
 })

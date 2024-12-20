@@ -77,7 +77,6 @@
   max-width: 400px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
 .img img {
   display: block;
   border-radius: 5px;
@@ -100,10 +99,6 @@
 }
 
 @media (max-width: 1200px) {
-  #productos {
-    margin-left: 50px;
-    width: 300px;
-  }
   #logo {
     height: 100px;
   }
